@@ -1,0 +1,37 @@
+Installation:
+   1. Make bible_verse.sh executable
+      $ chmod +x bible_verse.sh
+
+   2. Move bible_verse.sh to executable path
+      $ mv bible_verse.sh /executable/path
+
+   3. Create a new MySQL database named `bible_db`
+      $ echo "CREATE DATABASE ABC" | mysql -u<db_user> -p<db_password>
+
+   4. Uncompress mysqldump file
+      $ bunzip2 bible_db.MySQLdump.sql.bz2
+
+   5. Execute mysqldump
+      $ mysql -u<db_user> -p<db_password> < bible_db.MySQLdump.sql
+
+   6. Done!
+      $ bible_verse.sh
+      kjv> ?
+
+Commands:
+   ls list Bible versions installed
+   sw {version} switch to another version
+
+   bls list book abbreviations
+   {book abbrev} {chapter}[{:|SPACE}{verse}] enters the scripture view mode
+      navigation: > [n], < [n], SPACE, . display next [n], previous [n], or same chapter
+      navigation: :{n} display particular verse, a:{n} for all Bible versions installed
+      exit mode: clx exits scripture view mode
+
+   {search word} word to search in the entire Bible
+
+   cls clear screen
+   q quit this application
+   ? display this help information
+
+-- eof --
